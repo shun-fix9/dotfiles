@@ -1,0 +1,31 @@
+[color]
+  ui = auto
+[merge]
+  tool = vimdiff
+[alias]
+  ci = commit -v
+  ci-empty = commit -v --allow-empty
+  ci-init = !git ci-empty -m 'initial commit'
+
+  co = checkout
+  m = checkout master
+  br = branch
+  current = symbolic-ref --short HEAD
+  tmp = stash save -u
+
+  up = "!git remote update --prune && git fetch --tags --prune && git m && git pull"
+
+  user-pf = "!git config --local user.name shun && git config --local user.email perfect.freeze@me.com"
+  user-ls = "!git config --local user.name shun && git config --local user.email shun.fix9@gmail.com"
+
+  reg-pub-pf = reg-pub github:perfect-freeze bitbucket:perfect_freeze
+  reg-pub-ls = reg-pub github:shun-fix9 bitbucket:shun-fix9
+
+  setup-pf = "!git user-pf && git reg-pub-pf"
+  setup-ls = "!git user-ls && git reg-pub-ls"
+[push]
+  default = current
+[user]
+  useConfigOnly = true
+[credential]
+  helper = store --file=/home/sakai/.git-post/credentials
