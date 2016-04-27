@@ -1,0 +1,9 @@
+mybashrc_is_product(){
+	is_product=
+}
+mybashrc_project_root_dir_list(){
+	project_root_dir_list=(
+		/var/docker
+		/var/www
+	)
+}
