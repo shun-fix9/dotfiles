@@ -1,0 +1,9 @@
+/.cache/
+/.config/
+/.git-post/
+/.ssh/
+/.vim/autoload/
+/.vim/bundle/
+/plugins/
+
+/.viminfo
