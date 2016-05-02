@@ -37,6 +37,7 @@ development_environment_setup_plugins(){
 		git://github.com/sanzen-sekai/git-pub
 		git://github.com/sanzen-sekai/git-sub-status
 		git://github.com/sanzen-sekai/git-post
+		git://github.com/sanzen-sekai/dockerfile-build-functions.git
 	)
 	for repo in ${repos[@]}; do
 		development_environment_setup_git_sync
@@ -87,6 +88,7 @@ development_environment_setup_git_sync(){
 		name=$1
 	else
 		name=$(basename $repo)
+		name=${name%.git}
 	fi
 
 	echo "$repo => $dir/$name"
