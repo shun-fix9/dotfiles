@@ -62,7 +62,7 @@ development_environment_setup_vim(){
 		git://github.com/tpope/vim-cucumber
 		git://github.com/tpope/vim-rails
 		git://github.com/vim-ruby/vim-ruby
-		git://github.com/jpo/vim-railscasts-theme.git
+		git://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
 	)
 	for repo in ${repos[@]}; do
 		development_environment_setup_git_sync
