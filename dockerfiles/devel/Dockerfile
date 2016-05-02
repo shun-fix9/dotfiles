@@ -36,6 +36,8 @@ RUN useradd -s /bin/bash sakai && \
 COPY development-environment-setup /home/sakai/bin
 COPY docker-entrypoint.sh /usr/local/bin
 
+ENV LANG ja_JP.UTF-8
+
 EXPOSE 22
 
 ENTRYPOINT ["docker-entrypoint.sh"]
