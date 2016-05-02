@@ -2,8 +2,8 @@
 /.config/
 /.git-post/
 /.ssh/
-/.vim/autoload/
-/.vim/bundle/
+/.vim/
 /plugins/
 
 /.viminfo
+/.bash_history
