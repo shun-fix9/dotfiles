@@ -79,7 +79,7 @@ set visualbell t_vb=
 
 set hlsearch
 
-set foldmethod=marker
+set foldmethod=none
 set foldlevel=0
 set foldnestmax=1
 
