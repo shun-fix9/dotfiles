@@ -79,8 +79,8 @@ set visualbell t_vb=
 
 set hlsearch
 
-set foldmethod=none
-set foldlevel=0
+set foldmethod=manual
+set foldlevel=10000
 set foldnestmax=1
 
 au BufRead,BufNewFile *.feature set filetype=cucumber
