@@ -1,37 +1,39 @@
 [color]
-	ui = auto
+  ui = auto
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 [alias]
-	a = add -A
+  a = add -A
 
-	ci = commit -v
-	ci-empty = commit -v --allow-empty
-	ci-init = !git ci-empty -m 'initial commit'
+  ci = commit -v
+  ci-empty = commit -v --allow-empty
+  ci-init = !git ci-empty -m 'initial commit'
 
-	co = checkout
-	m = checkout master
+  t = tag-for-release release
 
-	br = branch
-	current = symbolic-ref --short HEAD
+  co = checkout
+  m = checkout master
 
-	tmp = stash save -u
+  br = branch
+  current = symbolic-ref --short HEAD
 
-	up = "!git remote update --prune && git fetch --tags --prune && git m && git pull"
+  tmp = stash save -u
 
-	re = readme
+  up = "!git remote update --prune && git fetch --tags --prune && git m && git pull"
 
-	user-pf = "!git config --local user.name shun && git config --local user.email perfect.freeze@me.com"
-	user-ls = "!git config --local user.name shun && git config --local user.email shun.fix9@gmail.com"
+  re = readme
 
-	reg-pub-pf = reg-pub github:perfect-freeze bitbucket:perfect_freeze
-	reg-pub-ls = reg-pub github:shun-fix9 bitbucket:shun-fix9
+  user-pf = "!git config --local user.name shun && git config --local user.email perfect.freeze@me.com"
+  user-ls = "!git config --local user.name shun && git config --local user.email shun.fix9@gmail.com"
 
-	setup-pf = "!git user-pf && git reg-pub-pf"
-	setup-ls = "!git user-ls && git reg-pub-ls"
+  reg-pub-pf = reg-pub github:perfect-freeze bitbucket:perfect_freeze
+  reg-pub-ls = reg-pub github:shun-fix9 bitbucket:shun-fix9
+
+  setup-pf = "!git user-pf && git reg-pub-pf"
+  setup-ls = "!git user-ls && git reg-pub-ls"
 [push]
-	default = current
+  default = current
 [user]
-	useConfigOnly = true
+  useConfigOnly = true
 [credential]
-	helper = store --file=/home/sakai/.git-post/credentials
+  helper = store --file=/home/sakai/.git-post/credentials
