@@ -36,4 +36,4 @@
 [user]
   useConfigOnly = true
 [credential]
-  helper = store --file=/home/sakai/.git-post/credentials
+  helper = store --file=/home/shun/.git-post/credentials

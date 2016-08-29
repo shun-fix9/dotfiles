@@ -2,7 +2,18 @@
 
 development_environment_setup_main(){
 	local root
-	root=/home/sakai
+	local root_confirm
+
+	root=$HOME
+	echo home: $HOME
+	read -p "OK? [Y/n] " root_confirm
+	case "$root_confirm" in
+		Y*|y*)
+		;;
+		*)
+			exit
+		;;
+	esac
 
 	development_environment_setup_dotfiles
 
@@ -61,6 +72,7 @@ development_environment_setup_vim(){
 		git://github.com/tpope/vim-cucumber
 		git://github.com/tpope/vim-rails
 		git://github.com/vim-ruby/vim-ruby
+		git://github.com/vim-scripts/Railscasts-Theme-GUIand256color
 	)
 	for repo in ${repos[@]}; do
 		development_environment_setup_git_sync
