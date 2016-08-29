@@ -23,14 +23,14 @@
 
   re = readme
 
-  user-pf = "!git config --local user.name shun && git config --local user.email perfect.freeze@me.com"
   user-ls = "!git config --local user.name shun && git config --local user.email shun.fix9@gmail.com"
+  user-getto = "!git config --local user.name shun && git config --local user.email shun@getto.systems"
 
-  reg-pub-pf = reg-pub github:perfect-freeze bitbucket:perfect_freeze
   reg-pub-ls = reg-pub github:shun-fix9 bitbucket:shun-fix9
+  reg-pub-getto = reg-pub github:shun-getto-systems bitbucket:shun-getto-systems
 
-  setup-pf = "!git user-pf && git reg-pub-pf"
   setup-ls = "!git user-ls && git reg-pub-ls"
+  setup-getto = "!git user-getto && git reg-pub-getto"
 [push]
   default = current
 [user]
