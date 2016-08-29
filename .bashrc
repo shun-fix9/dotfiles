@@ -1,4 +1,6 @@
 if [ "$PS1" ]; then
 	. $HOME/plugins/mybashrc/bin/mybashrc.sh
-	eval "$(direnv hook bash)"
+	if [ "$(which direnv)" ]; then
+		eval "$(direnv hook bash)"
+	fi
 fi
