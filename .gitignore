@@ -4,6 +4,7 @@
 /.ssh/
 /.vim/
 /plugins/
+/.birdfirm/
 
 /.viminfo
 /.bash_history
