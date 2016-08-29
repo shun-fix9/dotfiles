@@ -5,15 +5,17 @@ development_environment_setup_main(){
   local root_confirm
 
   root=$HOME
-  echo home: $HOME
-  read -p "OK? [Y/n] " root_confirm
-  case "$root_confirm" in
-    Y*|y*)
-    ;;
-    *)
-      exit
-    ;;
-  esac
+  if [ "$root" != "$(pwd)" ]; then
+    echo home: $HOME
+    read -p "OK? [Y/n] " root_confirm
+    case "$root_confirm" in
+      Y*|y*)
+      ;;
+      *)
+        exit
+      ;;
+    esac
+  fi
 
   development_environment_setup_dotfiles
 
@@ -54,15 +56,28 @@ development_environment_setup_plugins(){
   done
 
   development_environment_setup_peco
+  development_environment_setup_birdfirm
 }
 development_environment_setup_peco(){
-  mkdir -p $dir/peco/bin
+  local peco_version
+  peco_version=0.4.2
 
-  cd $dir/peco
-  curl -sSL https://github.com/peco/peco/releases/download/v0.4.2/peco_linux_amd64.tar.gz > peco_linux_amd64.tar.gz
-  tar xvzf peco_linux_amd64.tar.gz
-  cd bin
-  ln -s ../peco_linux_amd64/peco
+  if [ ! -e $dir/peco/bin/peco ]; then
+    mkdir -p $dir/peco/bin
+
+    cd $dir/peco
+    curl -sSL https://github.com/peco/peco/releases/download/v$peco_version/peco_linux_amd64.tar.gz > peco_linux_amd64.tar.gz
+    tar xvzf peco_linux_amd64.tar.gz
+    cd bin
+    ln -s ../peco_linux_amd64/peco
+  fi
+}
+development_environment_setup_birdfirm(){
+  dir=$root
+  mkdir -p $dir
+
+  repo=git@bitbucket.org:shun-getto-systems/birdfirm-files
+  development_environment_setup_git_sync .birdfirm
 }
 development_environment_setup_vim(){
   local dir
