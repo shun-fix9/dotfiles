@@ -23,13 +23,13 @@
 
   re = readme
 
-  user-ls = "!git config --local user.name shun && git config --local user.email shun.fix9@gmail.com"
+  user-fix9 = "!git config --local user.name shun && git config --local user.email shun.fix9@gmail.com"
   user-getto = "!git config --local user.name shun && git config --local user.email shun@getto.systems"
 
-  reg-pub-ls = reg-pub github:shun-fix9 bitbucket:shun-fix9
+  reg-pub-fix9 = reg-pub github:shun-fix9 bitbucket:shun-fix9
   reg-pub-getto = reg-pub github:shun-getto-systems bitbucket:shun-getto-systems
 
-  setup-ls = "!git user-ls && git reg-pub-ls"
+  setup-fix9 = "!git user-fix9 && git reg-pub-fix9"
   setup-getto = "!git user-getto && git reg-pub-getto"
 [push]
   default = current
