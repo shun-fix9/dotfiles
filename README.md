@@ -1,5 +1,11 @@
 # 開発環境用 dotfiles
 
+## tmux で vi が元の画面を復元するようになった場合
+
+```bash
+tic $HOME/.terminfo/customize-xterm-256color.tic
+```
+
 ## dockerfiles
 
 ### ビルド方法
