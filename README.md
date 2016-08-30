@@ -6,6 +6,8 @@
 tic $HOME/.terminfo/customize-xterm-256color.tic
 ```
 
+see: http://d.hatena.ne.jp/lurker/20061118/1163810847
+
 ## dockerfiles
 
 ### ビルド方法
