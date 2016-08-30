@@ -43,6 +43,7 @@ development_environment_setup_plugins(){
     git://github.com/shun-fix9/mybashrc
     git://github.com/shun-fix9/findword
     git://github.com/shun-fix9/birdfirm
+    git://github.com/shun-fix9/tmux-wrapper
     git://github.com/sanzen-sekai/mypassword
     git://github.com/sanzen-sekai/dockerfile-build-functions
     git://github.com/sanzen-sekai/git-readme
