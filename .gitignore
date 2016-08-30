@@ -4,7 +4,9 @@
 /.ssh/
 /.vim/
 /plugins/
+/tmp/
 /.birdfirm/
+/.tmux.wrapper/
 
 /.viminfo
 /.bash_history
