@@ -8,6 +8,7 @@
 /.birdfirm/
 /.tmux.wrapper/
 /.terminfo/*/
+/.ansible/
 
 /.viminfo
 /.bash_history
