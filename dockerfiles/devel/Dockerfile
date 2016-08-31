@@ -33,7 +33,7 @@ RUN useradd -s /bin/bash sakai && \
 	mkdir -p /home/sakai/bin && \
 	chown sakai.sakai -R /home/sakai
 
-COPY development-environment-setup /home/sakai/bin
+COPY bin/development-environment-setup /home/sakai/bin
 COPY docker-entrypoint.sh /usr/local/bin
 
 ENV LANG ja_JP.UTF-8
