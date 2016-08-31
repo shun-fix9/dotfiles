@@ -6,6 +6,6 @@ fi
 
 env > /etc/docker-env
 
-sudo -u sakai /home/sakai/bin/development-environment-setup
+sudo -u shun /home/shun/bin/development-environment-setup
 
 exec "$@"
