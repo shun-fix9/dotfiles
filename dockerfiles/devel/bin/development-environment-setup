@@ -58,7 +58,6 @@ development_environment_setup_plugins(){
   done
 
   development_environment_setup_peco
-  development_environment_setup_birdfirm
 }
 development_environment_setup_peco(){
   local peco_version
@@ -73,13 +72,6 @@ development_environment_setup_peco(){
     cd bin
     ln -s ../peco_linux_amd64/peco
   fi
-}
-development_environment_setup_birdfirm(){
-  dir=$root
-  mkdir -p $dir
-
-  repo=git@bitbucket.org:shun-getto-systems/birdfirm-files
-  development_environment_setup_git_sync .birdfirm
 }
 development_environment_setup_vim(){
   local dir

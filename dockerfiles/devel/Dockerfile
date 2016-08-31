@@ -27,13 +27,13 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 581
 		&& \
 	apt-get clean
 
-RUN useradd -s /bin/bash sakai && \
-	usermod -aG sudo sakai && \
+RUN useradd -s /bin/bash shun && \
+	usermod -aG sudo shun && \
 	echo '%sudo	ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/sudo-nopasswd && \
-	mkdir -p /home/sakai/bin && \
-	chown sakai.sakai -R /home/sakai
+	mkdir -p /home/shun/bin && \
+	chown shun:shun -R /home/shun
 
-COPY bin/development-environment-setup /home/sakai/bin
+COPY bin/development-environment-setup /home/shun/bin
 COPY docker-entrypoint.sh /usr/local/bin
 
 ENV LANG ja_JP.UTF-8

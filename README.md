@@ -13,16 +13,13 @@ see: http://d.hatena.ne.jp/lurker/20061118/1163810847
 ### ビルド方法
 
 ```bash
-./build.sh
-./build.sh -m # メジャーバージョンアップ
-./build.sh -p # パッチバージョンアップ
-./build.sh -b # メジャーバージョンアップに向けた minor 999 バージョン
+./build.sh [major|minor|patch|beta|exact] [version]
 ```
 
 ### run
 
 ```bash
-docker run -d -P --volumes-from sakai-shared sakai/devel:<version>
+docker run -d -P --volumes-from shun-shared shun/devel:<version>
 ```
 
 ### 詳細
