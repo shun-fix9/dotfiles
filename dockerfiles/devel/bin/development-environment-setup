@@ -57,20 +57,41 @@ development_environment_setup_plugins(){
     development_environment_setup_git_sync
   done
 
+  development_environment_setup_direnv
   development_environment_setup_peco
+}
+development_environment_setup_direnv(){
+  local direnv_version
+  direnv_version=2.9.0
+  echo install direnv v$direnv_version
+
+  mkdir -p $dir/direnv/bin
+
+  if [ ! -d $dir/direnv/$direnv_version ]; then
+    mkdir -p $dir/direnv/$direnv_version
+    cd $dir/direnv/$direnv_version
+    curl -sSL https://github.com/direnv/direnv/releases/download/v$direnv_version/direnv.linux-amd64 > direnv
+    chmod a+x direnv
+    cd $dir/direnv/bin
+    rm -f direnv
+    ln -s ../$direnv_version/direnv
+  fi
 }
 development_environment_setup_peco(){
   local peco_version
   peco_version=0.4.2
+  echo install peco v$peco_version
 
-  if [ ! -e $dir/peco/bin/peco ]; then
-    mkdir -p $dir/peco/bin
+  mkdir -p $dir/peco/bin
 
-    cd $dir/peco
+  if [ ! -d $dir/peco/$peco_version ]; then
+    mkdir -p $dir/peco/$peco_version
+    cd $dir/peco/$peco_version
     curl -sSL https://github.com/peco/peco/releases/download/v$peco_version/peco_linux_amd64.tar.gz > peco_linux_amd64.tar.gz
     tar xvzf peco_linux_amd64.tar.gz
-    cd bin
-    ln -s ../peco_linux_amd64/peco
+    cd $dir/peco/bin
+    rm -f peco
+    ln -s ../$peco_version/peco_linux_amd64/peco
   fi
 }
 development_environment_setup_vim(){
