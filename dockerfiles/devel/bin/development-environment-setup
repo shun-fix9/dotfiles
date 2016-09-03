@@ -1,4 +1,5 @@
 #!/bin/bash
+# VERSION: 0.0.10 : for docker build
 
 development_environment_setup_main(){
   local root
@@ -21,6 +22,8 @@ development_environment_setup_main(){
 
   development_environment_setup_plugins
   development_environment_setup_vim
+
+  development_environment_setup_tic
 }
 
 development_environment_setup_dotfiles(){
@@ -131,6 +134,12 @@ development_environment_setup_vim(){
       fi
     fi
   done
+}
+development_environment_setup_tic(){
+  cd $root
+  if [ -f .terminfo/customize-xterm-256color.tic ]; then
+    tic .terminfo/customize-xterm-256color.tic
+  fi
 }
 
 development_environment_setup_git_sync(){
