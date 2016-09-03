@@ -36,8 +36,13 @@ RUN useradd -s /bin/bash shun && \
 COPY bin/development-environment-setup /home/shun/bin
 COPY docker-entrypoint.sh /usr/local/bin
 
-ENV LANG ja_JP.UTF-8
+USER shun
+WORKDIR /home/shun
+RUN HOME=/home/shun /home/shun/bin/development-environment-setup
 
+
+USER root
+ENV LANG ja_JP.UTF-8
 EXPOSE 22
 
 ENTRYPOINT ["docker-entrypoint.sh"]

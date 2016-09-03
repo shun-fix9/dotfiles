@@ -6,6 +6,4 @@ fi
 
 env > /etc/docker-env
 
-sudo -u shun /home/shun/bin/development-environment-setup
-
 exec "$@"
