@@ -3,7 +3,7 @@
 ## tmux で vi が元の画面を復元するようになった場合
 
 ```bash
-tic $HOME/.terminfo/customize-xterm-256color.tic
+tic $HOME/.tic/customize-xterm-256color.tic
 ```
 
 see: http://d.hatena.ne.jp/lurker/20061118/1163810847
