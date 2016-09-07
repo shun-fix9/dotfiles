@@ -2,8 +2,10 @@
 
 . dockerfile-build-functions.sh
 
+mode=$1
+
 dockerfile_build_pre(){
-  if [ -n "$1" ]; then
+  if [ -n "$mode" ]; then
     sed -i "s/^# VERSION for docker :.*/# VERSION for docker : $version/" bin/development-environment-setup
   fi
 }
