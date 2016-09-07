@@ -1,39 +1,46 @@
 FROM ubuntu:14.04
 MAINTAINER shun
 
-RUN set -x && \
-	apt-get update && \
-	apt-get install -y \
-		apt-transport-https \
-		bash-completion \
-		ca-certificates \
-		curl \
-		git \
-		language-pack-ja \
-		language-pack-ja-base \
-		man \
-		manpages-dev \
-		ssh \
-		unzip \
-		vim \
-		&& \
-	apt-get clean
+RUN : \
+ && set -x \
+ && apt-get update \
+ && apt-get install -y \
+      apt-transport-https \
+      bash-completion \
+      ca-certificates \
+      curl \
+      git \
+      language-pack-ja \
+      language-pack-ja-base \
+      man \
+      manpages-dev \
+      ssh \
+      unzip \
+      vim \
+ && apt-get clean \
+ && :
 
-RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D && \
-	echo 'deb https://apt.dockerproject.org/repo ubuntu-trusty main' > /etc/apt/sources.list.d/docker.list && \
-	apt-get update && \
-	apt-get install -y \
-		docker-engine \
-		&& \
-	apt-get clean
+RUN : \
+ && apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D \
+ && echo 'deb https://apt.dockerproject.org/repo ubuntu-trusty main' > /etc/apt/sources.list.d/docker.list \
+ && apt-get update \
+ && apt-get install -y \
+      docker-engine \
+ && apt-get clean \
+ && :
 
-RUN useradd -s /bin/bash shun && \
-	usermod -aG sudo shun && \
-	echo '%sudo	ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/sudo-nopasswd && \
-	mkdir -p /home/shun/bin && \
-	chown shun:shun -R /home/shun
+COPY ssh /home/shun/.ssh
+COPY bin /home/shun/bin
 
-COPY bin/development-environment-setup /home/shun/bin
+RUN : \
+ && useradd -s /bin/bash shun \
+ && usermod -aG sudo shun \
+ && echo '%sudo	ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/sudo-nopasswd \
+ && chown shun:shun -R /home/shun \
+ && chmod 700 /home/shun/.ssh \
+ && chmod 600 /home/shun/.ssh/authorized_keys \
+ && :
+
 COPY docker-entrypoint.sh /usr/local/bin
 
 USER shun

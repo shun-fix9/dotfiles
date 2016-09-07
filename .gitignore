@@ -12,6 +12,7 @@
 /plugins/
 /tmp/
 /bin/development-environment-setup
+/dockerfiles/devel/ssh/authorized_keys
 
 /.shared/
 /.aws
