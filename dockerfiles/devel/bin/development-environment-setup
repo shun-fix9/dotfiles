@@ -150,6 +150,7 @@ development_environment_setup_shared(){
     .aws
     .config
     .docker
+    .docker_build
     .git-post
     .ssh
     .terminfo
