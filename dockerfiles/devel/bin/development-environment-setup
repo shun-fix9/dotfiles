@@ -149,6 +149,7 @@ development_environment_setup_shared(){
   local -a paths=(
     .aws
     .config
+    .docker
     .git-post
     .ssh
     .terminfo

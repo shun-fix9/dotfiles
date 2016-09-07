@@ -1,16 +1,22 @@
 /.cache/
 /.config/
 /.git-post/
-/.ssh/
 /.vim/
-/plugins/
-/tmp/
 /.birdfirm/
 /.tmux.wrapper/
-/.terminfo/*/
 /.ansible/
 
 /.viminfo
 /.bash_history
 
+/plugins/
+/tmp/
 /bin/development-environment-setup
+
+/.shared/
+/.aws
+/.config
+/.docker
+/.git-post
+/.ssh
+/.terminfo
