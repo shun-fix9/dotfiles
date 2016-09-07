@@ -17,6 +17,7 @@
 /.aws
 /.config
 /.docker
+/.docker_build
 /.git-post
 /.ssh
 /.terminfo
