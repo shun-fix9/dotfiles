@@ -36,6 +36,7 @@ RUN : \
  && useradd -s /bin/bash shun \
  && usermod -aG sudo shun \
  && echo '%sudo	ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/sudo-nopasswd \
+ && touch /home/shun/.ssh/authorized_keys \
  && chown shun:shun -R /home/shun \
  && chmod 700 /home/shun/.ssh \
  && chmod 600 /home/shun/.ssh/authorized_keys \
