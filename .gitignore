@@ -12,3 +12,5 @@
 
 /.viminfo
 /.bash_history
+
+/bin/development-environment-setup
