@@ -155,7 +155,7 @@ development_environment_setup_shared(){
   )
   for path in ${paths[@]}; do
     mkdir -p .shared/$path
-    rm -rf .shared/$path
+    rm -rf $path
     ln -s .shared/$path
   done
 }
