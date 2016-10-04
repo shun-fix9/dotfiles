@@ -150,6 +150,7 @@ development_environment_setup_shared(){
     local -a paths=(
       .aws
       .config
+      .gem
       .docker
       .docker_build
       .git-post
