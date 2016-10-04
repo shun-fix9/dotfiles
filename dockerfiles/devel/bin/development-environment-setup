@@ -1,5 +1,4 @@
 #!/bin/bash
-# VERSION for docker : 0.3.4
 
 development_environment_setup_main(){
   local root
