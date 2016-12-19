@@ -9,8 +9,6 @@
   ci-empty = commit -v --allow-empty
   ci-init = !git ci-empty -m 'initial commit'
 
-  t = tag-for-release release
-
   co = checkout
   m = checkout master
 
