@@ -55,7 +55,7 @@ development_environment_setup_plugins(){
     git://github.com/sanzen-sekai/git-pub
     git://github.com/sanzen-sekai/git-sub-status
     git://github.com/sanzen-sekai/git-post
-    git://github.com/sanzen-sekai/git-tag-for-release
+    git://github.com/sanzen-sekai/git-branch-and-post
   )
   for repo in ${repos[@]}; do
     development_environment_setup_git_sync
