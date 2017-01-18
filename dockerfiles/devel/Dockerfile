@@ -15,12 +15,13 @@ RUN : \
       ssh \
       sudo \
       unzip \
+      zsh \
  && apt-get clean \
  && :
 
 
 RUN : \
- && useradd -s /bin/bash shun \
+ && useradd -s /bin/zsh shun \
  && usermod -aG sudo shun \
  && echo '%sudo	ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/sudo-nopasswd \
  && mkdir -p /home/shun/.ssh \
