@@ -21,7 +21,7 @@ RUN : \
 
 
 RUN : \
- && useradd -s /bin/zsh shun \
+ && useradd shun \
  && usermod -aG sudo shun \
  && echo '%sudo	ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/sudo-nopasswd \
  && mkdir -p /home/shun/.ssh \
