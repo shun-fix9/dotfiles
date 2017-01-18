@@ -22,8 +22,6 @@ development_environment_setup_main(){
   development_environment_setup_plugins
   development_environment_setup_vim
 
-  development_environment_setup_tic
-
   development_environment_setup_shared
 }
 
@@ -103,60 +101,33 @@ development_environment_setup_vim(){
   local repo
   local file
 
-  dir=$root/.vim/bundle
+  dir=$root/.config/nvim/repos/github.com/Shougo
   mkdir -p $dir
 
   local -a repos=(
-    git://github.com/tpope/vim-pathogen
-    git://github.com/tpope/vim-fugitive
-    git://github.com/tpope/vim-endwise
-    git://github.com/msanders/snipmate.vim
-    git://github.com/edsono/vim-matchit
-    git://github.com/plasticboy/vim-markdown
-    git://github.com/kchmck/vim-coffee-script
-    git://github.com/cakebaker/scss-syntax.vim
-    git://github.com/tpope/vim-cucumber
-    git://github.com/tpope/vim-rails
-    git://github.com/vim-ruby/vim-ruby
-    git://github.com/vim-scripts/Railscasts-Theme-GUIand256color
+    git://github.com/Shougo/dein.vim
   )
   for repo in ${repos[@]}; do
     development_environment_setup_git_sync
   done
-
-  dir=$root/.vim/autoload
-  mkdir -p $dir
-  cd $dir
-
-  for file in ../bundle/*/autoload/*; do
-    if [ -f $file ]; then
-      if [ ! -L "$(basename $file)" ]; then
-        ln -s $file
-      fi
-    fi
-  done
-}
-development_environment_setup_tic(){
-  cd $root
-  if [ -f .terminfo/customize-xterm-256color.tic ]; then
-    tic .terminfo/customize-xterm-256color.tic
-  fi
 }
 development_environment_setup_shared(){
-  if [ -d .shared ]; then
+  if [ -d $root/.shared ]; then
     cd $root
     local path
     local -a paths=(
       .aws
       .config
-      .gem
       .docker
       .docker_build
+      .gem
       .git-post
+      .local
       .ssh
       .terminfo
     )
     for path in ${paths[@]}; do
+      echo "ln -s .shared/$path"
       mkdir -p .shared/$path
       rm -rf $path
       ln -s .shared/$path
