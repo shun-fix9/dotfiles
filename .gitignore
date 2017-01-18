@@ -19,6 +19,8 @@
 /.config
 /.docker
 /.docker_build
+/.gem
 /.git-post
+/.local
 /.ssh
 /.terminfo
