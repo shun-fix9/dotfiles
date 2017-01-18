@@ -8,6 +8,7 @@
 
 /.viminfo
 /.bash_history
+/.sudo_as_admin_successful
 
 /plugins/
 /tmp/
@@ -24,3 +25,6 @@
 /.local
 /.ssh
 /.terminfo
+
+/.histfile
+/.zcompdump
