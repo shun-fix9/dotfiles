@@ -61,6 +61,8 @@ development_environment_setup_plugins(){
 
   development_environment_setup_direnv
   development_environment_setup_peco
+
+  curl -sL zplug.sh/installer | zsh
 }
 development_environment_setup_direnv(){
   local direnv_version
