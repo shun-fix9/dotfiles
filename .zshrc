@@ -40,7 +40,7 @@ fi
 
 export RAILS_DEVEL_NAME=$(basename $HOME)
 
-alias e='nvim'
+alias vi='nvim'
 
 alias rm='rm -i'
 alias cp='cp -i'
