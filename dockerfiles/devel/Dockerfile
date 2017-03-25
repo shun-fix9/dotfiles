@@ -71,6 +71,7 @@ RUN HOME=/home/shun /home/shun/bin/development-environment-setup
 COPY docker-entrypoint.sh /usr/local/bin
 
 USER root
+RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 ENV LANG ja_JP.UTF-8
 EXPOSE 22
 
