@@ -5,6 +5,7 @@
 /.birdfirm/
 /.tmux.wrapper/
 /.ansible/
+/.zplug/
 
 /.viminfo
 /.bash_history
