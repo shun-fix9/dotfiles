@@ -123,7 +123,9 @@ development_environment_setup_shared(){
       .docker
       .docker_build
       .gem
+      .gsutil
       .git-post
+      .kube
       .local
       .ssh
       .terminfo
