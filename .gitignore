@@ -22,10 +22,13 @@
 /.docker
 /.docker_build
 /.gem
+/.gsutil
 /.git-post
+/.kube
 /.local
 /.ssh
 /.terminfo
+/.zsh
 
 /.histfile
 /.zcompdump
